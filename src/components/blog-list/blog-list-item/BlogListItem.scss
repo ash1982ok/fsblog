@@ -1,0 +1,24 @@
+.blog-item-wrapper {
+    list-style: none;
+    cursor: pointer;
+}
+
+.blog-item {
+    margin: 10px;
+    padding: 10px;
+    background: #e5eefd;
+    box-shadow: 0px 0px 10px 3px rgb(243, 236, 241);
+    
+    .header {
+        font-size: 20px;
+        padding-bottom: 10px;
+        
+        .info {
+            font-size: 12px;
+        }
+    }
+
+    .del-blog {
+        margin-top: 10px;
+    }
+}

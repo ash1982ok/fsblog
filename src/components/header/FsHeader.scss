@@ -1,0 +1,30 @@
+header {
+    box-shadow: 0 8px 5px -5px rgba(35,90,173,0.75);
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    background: #001731;
+}
+
+.shadows {
+    position: relative;
+    text-transform: uppercase;
+    text-shadow: -15px 5px 20px #235aad;
+    color: white;
+    letter-spacing: -0.05em;
+    font-family: 'Anton', Arial, sans-serif;
+    user-select: none;
+    text-transform: uppercase;
+    font-size: 100px;
+    transition: all 0.25s ease-out;
+    width: 90%;
+
+    &:hover {
+        text-shadow: -16px 6px 15px #ced0d3;
+    }
+}
+
+.blog-title {
+    padding-left: 50px;
+}
+
