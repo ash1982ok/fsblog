@@ -2,15 +2,7 @@ import './BlogListItem.scss';
 
 import React from 'react';
 
-interface IBlogListItemProps {
-    title:string;
-    datePosted:string;
-    category:string;
-    content: string;
-    tags: string;
-}
-
-const BlogListItem: React.FC<IBlogListItemProps> = (props:IBlogListItemProps) => {
+const BlogListItem: React.FC<IBlogItem> = (props:IBlogItem) => {
     return (
         <li className="col-3 blog-item-wrapper">
             <div className="blog-item">
@@ -21,7 +13,7 @@ const BlogListItem: React.FC<IBlogListItemProps> = (props:IBlogListItemProps) =>
                         <strong>Category </strong> : {props.category} <br/>
                         <strong>Tags</strong> : {props.tags}
                     </div>
-                    <button className="btn btn-primary del-blog">delete</button>
+                    <button className="btn btn-primary del-blog" onClick={props.deleteBlog}>delete</button>
                 </div>
             </div>
         </li>

@@ -6,22 +6,27 @@ import BlogItem from '../components/blog-item/Blog-Item';
 import BlogList from '../components/blog-list/BlogList';
 import FsHeader from '../components/header/FsHeader';
 import UrlError from '../components/url-error/Url-Error';
-
 export const history = createHistory();
 
-// Instead of BrowserRouter, we use the regular router,
-// but we pass in a customer history to it.
-const AppRouter = () => (
+const AppRouter = (props:IBlogsRouteProps) => (
   <Router history={history}>
     <div className="App container-fluid">
     <FsHeader />
       <Switch>
-        <Route exact path="/" component={BlogList} />
+        <Route  
+        exact
+        path="/" 
+        render={(routeProps:any):any => <BlogList {...routeProps} {...props} />}
+        />
         <Route path="/blog/:id" component={BlogItem} />
         <Route component={UrlError} />
       </Switch>
     </div>
   </Router>
 );
+
+interface IBlogsRouteProps {
+  blogs : IBlogItem []
+}
 
 export default AppRouter;
