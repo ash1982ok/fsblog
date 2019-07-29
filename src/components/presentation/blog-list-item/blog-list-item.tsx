@@ -1,4 +1,4 @@
-import './BlogListItem.scss';
+import './blog-list-item.scss';
 
 import React from 'react';
 

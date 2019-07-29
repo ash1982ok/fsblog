@@ -2,22 +2,18 @@ import createHistory from 'history/createBrowserHistory';
 import React from 'react';
 import { Route, Router, Switch } from 'react-router-dom';
 
-import BlogItem from '../components/blog-item/Blog-Item';
-import BlogList from '../components/blog-list/BlogList';
-import FsHeader from '../components/header/FsHeader';
-import UrlError from '../components/url-error/Url-Error';
+import BlogItem from '../components/container/blog/blog';
+import BlogList from '../components/container/blog-list/blog-list';
+import FsHeader from '../components/presentation/header/header';
+import UrlError from '../components/container/url-error/url-error';
 export const history = createHistory();
 
-const AppRouter = (props:IBlogsRouteProps) => (
+const AppRouter = (props: IBlogsRouteProps) => (
   <Router history={history}>
     <div className="App container-fluid">
-    <FsHeader />
+      <FsHeader />
       <Switch>
-        <Route  
-        exact
-        path="/" 
-        render={(routeProps:any):any => <BlogList {...routeProps} {...props} />}
-        />
+        <Route exact path="/" component={BlogList} />
         <Route path="/blog/:id" component={BlogItem} />
         <Route component={UrlError} />
       </Switch>
@@ -26,7 +22,7 @@ const AppRouter = (props:IBlogsRouteProps) => (
 );
 
 interface IBlogsRouteProps {
-  blogs : IBlogItem []
+  blogs: IBlogItem[]
 }
 
 export default AppRouter;

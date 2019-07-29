@@ -1,8 +1,8 @@
 import './App.scss';
 
 import React, { Component } from 'react'
-import AppRouter from './router';
-import { Blogs } from './models/Blogs';
+import AppRouter from '../router';
+import { Blogs } from '../data/blogs-data';
 
 export default class App extends Component<IBlogsProps, IBlogItemState> {
   constructor(props:IBlogsProps){

@@ -1,8 +1,7 @@
 
-/// <reference path="../types/interfaces.d.ts" />
+/// <reference path="../typings/interfaces.d.ts" />
 
-export const Blogs:any = {
-    blogs:[
+export const Blogs:any = [
     {
         id: "1",
         title: "My first blog",
@@ -35,8 +34,7 @@ export const Blogs:any = {
         tags:"A,B,C",
         content: "sdfdsf"
     },
-    ]
-}
+    ];
 
 
 

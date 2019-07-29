@@ -1,4 +1,4 @@
-import './Url-Error.scss';
+import './url-error.scss';
 
 import React from 'react';
 

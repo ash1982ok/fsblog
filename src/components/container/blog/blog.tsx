@@ -1,5 +1,5 @@
 import React from 'react'
-import './Blog-Item.scss';
+import './blog.scss';
 
 const BlogItem: React.FC = () => {
     return (
