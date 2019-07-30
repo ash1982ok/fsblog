@@ -14,20 +14,13 @@ interface IBlogListProps {
     deleteBlog: (blog: IBlogItem) => void;
 }
 
+// const deleteBlog = (blogItem:IBlogItem)=>{
+//     console.log('hello', blogItem);
+// }
 
 const BlogList: React.FC<IBlogListProps> = (props: IBlogListProps) => {
-    // const [value, setValue] = useState<IBlogListProps>(props);
 
-    /**
-     * Function will delete the selected blog from blog list view
-     * @param index index of the blog in the list
-     */
-    // const deleteBlog = (blog: IBlogItem): void => {
-    //     value.blogs.splice(index, 1);
-    //     setValue({ blogs: value.blogs });
-    // }
-    // to be added in blogitem component  deleteBlog={() => deleteBlog(index)}
-
+   
     /**
      * 
      * @param props 
@@ -35,9 +28,9 @@ const BlogList: React.FC<IBlogListProps> = (props: IBlogListProps) => {
     const generateBlogItemsDom = (blogs: IBlogItem[]): ReactNode[] => {
         let list: ReactNode[] = [];
         if (blogs && blogs.length > 0) {
-            list = blogs.map((blogItem: IBlogItem, index: number) => {
+            list = blogs.map((blogItem: IBlogItem) => {
                 return <BlogItem key={blogItem.id} {...blogItem}
-                    deleteBlog={()=>props.deleteBlog(blogItem)}
+                    deleteBlog={props.deleteBlog}
                 />;
             })
         }
@@ -54,9 +47,12 @@ const BlogList: React.FC<IBlogListProps> = (props: IBlogListProps) => {
     );
 }
 
-const mapStateToProps = (state: IBlogListProps) => ({
-    blogs: state.blogs
-});
+const mapStateToProps = (state: IBlogListProps) => {
+    return {
+        blogs: state.blogs,
+        deleteBlog: deleteBlogAction
+    }
+};
 
 const matchDispatchToProps = (dispatch: Dispatch) => {
     return bindActionCreators({ deleteBlog: deleteBlogAction }, dispatch);

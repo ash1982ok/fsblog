@@ -23,7 +23,7 @@ const BlogListItem: React.FC<IBlogItem> = (props:IBlogItem) => {
                         <strong>Category </strong> : {props.category} <br/>
                         <strong>Tags</strong> : {props.tags}
                     </div>
-                    <button className="btn btn-primary del-blog" onClick={()=>props.deleteBlog}>delete</button>
+                    <button className="btn btn-primary del-blog" onClick={(e)=>props.deleteBlog(props)}>delete</button>
                 </div>
             </div>
         </li>
