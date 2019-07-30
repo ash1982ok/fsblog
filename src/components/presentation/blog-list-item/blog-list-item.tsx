@@ -2,6 +2,16 @@ import './blog-list-item.scss';
 
 import React from 'react';
 
+interface IBlogItem {
+    id: string,
+    title: string,
+    datePosted: number,
+    category?: string,
+    tags?: string,
+    content: string,
+    deleteBlog ?:any
+}
+
 const BlogListItem: React.FC<IBlogItem> = (props:IBlogItem) => {
     return (
         <li className="col-3 blog-item-wrapper">
@@ -13,7 +23,7 @@ const BlogListItem: React.FC<IBlogItem> = (props:IBlogItem) => {
                         <strong>Category </strong> : {props.category} <br/>
                         <strong>Tags</strong> : {props.tags}
                     </div>
-                    <button className="btn btn-primary del-blog" onClick={props.deleteBlog}>delete</button>
+                    <button className="btn btn-primary del-blog" onClick={()=>props.deleteBlog}>delete</button>
                 </div>
             </div>
         </li>

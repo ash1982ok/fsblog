@@ -12,6 +12,8 @@ interface IBlogItem {
     deleteBlog?: (event: React.MouseEvent<HTMLButtonElement>) => void
 }
 
+
+
 // interface IBlogsProps extends RouteComponentProps <{blogs: IBlogItem[]}>{
 //     blogs?: IBlogItem [];
 // }

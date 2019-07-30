@@ -1,16 +1,17 @@
 import { Blogs } from "../../data/blogs-data";
+import { BLOG_ACTIONS } from "../../constants/constants";
 
 export function blogReducer (
     state = Blogs, 
     action:any
     ):any {
     switch (action.type) {
-        case 'SHOW_ALL_BLOGS':
+        case BLOG_ACTIONS.SHOW_ALL_BLOGS:
             return state;
-        case 'REMOVE_BLOG':
+        case BLOG_ACTIONS.SHOW_BLOG:
             return state;
-        case 'ADD_BLOG':
-            return state;
+        case BLOG_ACTIONS.DELETE_BLOG:
+            return null;
         default: 
             return state;
     }
