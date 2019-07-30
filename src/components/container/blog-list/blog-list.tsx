@@ -11,7 +11,7 @@ export type deleteBlogSyntheticEvent = React.SyntheticEvent<IBlogItem>;
 
 interface IBlogListProps {
     blogs: IBlogItem[],
-    deleteBlog: (blog: IBlogItem) => void;
+    deleteBlog: (blogIndex:number) => void;
 }
 
 // const deleteBlog = (blogItem:IBlogItem)=>{
@@ -28,9 +28,10 @@ const BlogList: React.FC<IBlogListProps> = (props: IBlogListProps) => {
     const generateBlogItemsDom = (blogs: IBlogItem[]): ReactNode[] => {
         let list: ReactNode[] = [];
         if (blogs && blogs.length > 0) {
-            list = blogs.map((blogItem: IBlogItem) => {
+            list = blogs.map((blogItem: IBlogItem, index:number) => {
                 return <BlogItem key={blogItem.id} {...blogItem}
-                    deleteBlog={props.deleteBlog}
+                    deleteBlog={props.deleteBlog} 
+                    blogIndex={index}
                 />;
             })
         }

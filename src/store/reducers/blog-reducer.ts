@@ -11,7 +11,9 @@ export function blogReducer (
         case BLOG_ACTIONS.SHOW_BLOG:
             return state;
         case BLOG_ACTIONS.DELETE_BLOG:
-            return state;
+            state.splice(action.payload,1);
+            return [...state]
+            
         default: 
             return state;
     }
