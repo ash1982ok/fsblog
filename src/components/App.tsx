@@ -1,36 +1,30 @@
 import './App.scss';
 
-import React, { Component } from 'react'
-import AppRouter from '../router';
-import { Blogs } from '../data/blogs-data';
+/** All the global import */
+import React, { Component } from 'react';
 
-export default class App extends Component<IBlogsProps, IBlogItemState> {
-  constructor(props:IBlogsProps){
-    super(props);
-    this.state = {
-      showingAllBlogs: true,
-      addingBlog: false,
-      deletedBlog: false
-    };
-  }
+/** All the local import */
+import { Blogs } from '../data/blogs-data';
+import AppRouter from '../router';
+
+/** Interface for the component props */
+interface IBlogsProps {
+  blogs: IBlogItem[]
+}
+
+/**
+ *  App component to hold all the components
+ * @param props IBlogsProps
+ */
+export default class App extends Component<IBlogsProps> {
 
   render() {
     return (
       <div>
-          <AppRouter {...this.props}/>
+        <AppRouter {...this.props} />
       </div>
     )
   }
 
   static defaultProps = Blogs;
 }
-
-interface IBlogsProps {
-  blogs : IBlogItem []
-}
-
-interface IBlogItemState {
-
-}
-
-

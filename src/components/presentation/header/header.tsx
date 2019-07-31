@@ -1,7 +1,11 @@
 import './header.scss';
 
+/** All the global import */
 import React from 'react';
 
+/**
+ *  FsHeader component to show header on top of the page
+ */
 const FsHeader: React.FC = () => {
     return (
         <header>

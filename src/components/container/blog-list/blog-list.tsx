@@ -1,40 +1,37 @@
 import './blog-list.scss';
 
+/** All the global import */
 import React, { ReactNode } from 'react';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import BlogItem from '../../presentation/blog-list-item/blog-list-item';
+import { bindActionCreators, Dispatch } from 'redux';
+
+/** All the local import */
 import deleteBlogAction from '../../../store/actions/delete-blog-action';
-import { Dispatch } from 'redux';
+import BlogItem from '../../presentation/blog-list-item/blog-list-item';
 
-export type deleteBlogSyntheticEvent = React.SyntheticEvent<IBlogItem>;
-
+/** Interface for the component props */
 interface IBlogListProps {
     blogs: IBlogItem[],
-    deleteBlog: (blogIndex:number) => void
+    deleteBlog: (blogIndex: number) => void
 }
-
+/**
+ *  BlogList component to show list of blogs
+ * @param props IBlogListProps
+ */
 const BlogList: React.FC<IBlogListProps> = (props: IBlogListProps) => {
 
-    
-    /**
-     * 
-     * @param props 
-     */
     const generateBlogItemsDom = (blogs: IBlogItem[]): ReactNode[] => {
         let list: ReactNode[] = [];
         if (blogs && blogs.length > 0) {
-            list = blogs.map((blogItem: IBlogItem, index:number) => {
+            list = blogs.map((blogItem: IBlogItem, index: number) => {
                 return <BlogItem key={blogItem.id} {...blogItem}
-                    deleteBlog={props.deleteBlog} 
+                    deleteBlog={props.deleteBlog}
                     blogIndex={index}
                 />;
             })
         }
-
         return list;
     }
-
     return (
         <ul className="row blog-list">
             {
