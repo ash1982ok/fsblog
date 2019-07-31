@@ -11,16 +11,12 @@ export type deleteBlogSyntheticEvent = React.SyntheticEvent<IBlogItem>;
 
 interface IBlogListProps {
     blogs: IBlogItem[],
-    deleteBlog: (blogIndex:number) => void;
+    deleteBlog: (blogIndex:number) => void
 }
-
-// const deleteBlog = (blogItem:IBlogItem)=>{
-//     console.log('hello', blogItem);
-// }
 
 const BlogList: React.FC<IBlogListProps> = (props: IBlogListProps) => {
 
-   
+    
     /**
      * 
      * @param props 

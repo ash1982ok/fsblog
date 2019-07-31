@@ -1,8 +1,9 @@
 import './blog-list-item.scss';
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-interface IBlogItem {
+interface IBlogListItem {
     id: string,
     title: string,
     datePosted: number,
@@ -13,7 +14,7 @@ interface IBlogItem {
     blogIndex: number
 }
 
-const BlogListItem: React.FC<IBlogItem> = (props:IBlogItem) => {
+const BlogListItem: React.FC<IBlogListItem> = (props:IBlogListItem) => {
     return (
         <li className="col-3 blog-item-wrapper">
             <div className="blog-item">
@@ -25,6 +26,7 @@ const BlogListItem: React.FC<IBlogItem> = (props:IBlogItem) => {
                         <strong>Tags</strong> : {props.tags}
                     </div>
                     <button className="btn btn-primary del-blog" onClick={(e)=>props.deleteBlog(props.blogIndex)}>delete</button>
+                    <Link className="btn btn-primary del-blog" to={"/blog/"+props.id}>show</Link>
                 </div>
             </div>
         </li>
