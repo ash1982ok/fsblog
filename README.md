@@ -12,6 +12,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
+### `yarn test`
+
+for Testing 
+
 ## Tech Features used in this application
 1) Typescript 
 2) sass
@@ -25,8 +29,9 @@ You will also see any lint errors in the console.
 1) Proper styles
 2) Mobile layout 
 3) Browser testing i.e. haven't checked on IE11 or other browser except chrome. Though included polyfill
-4) Each folder index files to have a proper importing
+4) Folder structure and organization like having index files in each folder to have a proper importing
 5) Completion of all component testing and some more meaningful testing
+6) Integration testing
 
 ## Learn More
 

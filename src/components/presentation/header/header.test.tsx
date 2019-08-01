@@ -1,9 +1,7 @@
 import React from "react";
-import {shallow, configure, ShallowWrapper} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import {shallow, ShallowWrapper} from 'enzyme';
 import FsHeader from './header';
-
-configure({ adapter: new Adapter() });
+import '../../../setupTests';
 
 /**
  * Setup function to run before each unit test
