@@ -1,5 +1,5 @@
 /** All the global import */
-import createHistory from 'history/createBrowserHistory';
+import { createBrowserHistory as createHistory } from 'history'
 import React from 'react';
 import { Route, Router, Switch } from 'react-router-dom';
 
@@ -29,7 +29,7 @@ const AppRouter = (props: IBlogsRouteProps) => (
       <FsHeader />
       <Switch>
         <Route exact path="/" component={BlogList} />
-        <Route path="/blog/:id" component={BlogItem} />
+        <Route exact path="/blog/:id" component={BlogItem} />
         <Route component={UrlError} />
       </Switch>
     </div>

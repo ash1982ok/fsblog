@@ -9,7 +9,7 @@ import React from 'react';
 const FsHeader: React.FC = () => {
     return (
         <header>
-            <div className="blog-title shadows">
+            <div className="blog-title shadows" data-test-attr="blog-title">
                 <span>M</span>
                 <span>Y</span>
                 <span> </span>

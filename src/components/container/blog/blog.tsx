@@ -4,7 +4,8 @@ import './blog.scss';
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router';
-
+import ReactHtmlParser from 'react-html-parser';
+import { Link } from 'react-router-dom';
 /**
  *  type def for URL parameter
  */
@@ -25,15 +26,20 @@ const BlogItem: React.FC<IBlogListProps> = (props: IBlogListProps) => {
         const mystate: IBlogItem[] = [...props.blogs];
         var blog: IBlogItem[] = mystate.splice(parseInt(props.match.params.id), 1);
         return (
-            <Fragment>
-                <h1>{blog[0].title}</h1>
-                <p>{blog[0].content}</p>
+            <section className="blog container col-12 col-sm-8">
+                <br/>
+                <Link to="/">Go back</Link><h1>{blog[0].title}
+                <br/>
+                </h1>
+                <p>{ReactHtmlParser (blog[0].content)}</p>
                 <summary>
-                    <strong>Date Posted: </strong>{blog[0].datePosted} <br/>
+                    <strong>Date Posted: </strong>{new Date(blog[0].datePosted).getDate() +'/'+ new Date(blog[0].datePosted).getMonth() + '/'+ new Date(blog[0].datePosted).getFullYear() } <br/>
                     <strong>Tags: </strong>{blog[0].tags} <br/>
                     <strong>Tags: </strong>{blog[0].category} <br/>
                 </summary>
-            </Fragment>
+                <br/>
+                <Link to="/">Go back</Link>
+            </section>
         );
     }
 
