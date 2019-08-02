@@ -1,7 +1,7 @@
 
 /// <reference path="../typings/interfaces.d.ts" />
 
-export const Blogs:any = [
+export const blogReducerDefaultState:IBlogItem[] = [
     {
         id: "1",
         title: "What is React",

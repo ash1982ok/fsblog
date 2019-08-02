@@ -41,7 +41,11 @@ const BlogList: React.FC<IBlogListProps> = (props: IBlogListProps) => {
     );
 }
 
-const mapStateToProps = (state: IBlogListProps) => {
+interface LinkStateProps {
+    blogs: IBlogItem[],
+    deleteBlog: (blogIndex: number) => void
+}
+const mapStateToProps = (state: IBlogListProps):LinkStateProps => {
     return {
         blogs: state.blogs,
         deleteBlog: deleteBlogAction

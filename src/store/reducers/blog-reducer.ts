@@ -1,14 +1,16 @@
 /** All the global import */
-import { Blogs } from "../../data/blogs-data";
+import { blogReducerDefaultState } from "../../data/blogs-data";
 import { BLOG_ACTIONS } from "../../constants/constants";
+import { BlogActionTypes } from "../../typings/actions";
 
 /** Reducer for blogs  
  * All the state manipulation happens here
 */
+
 export function blogReducer (
-    state = Blogs, 
-    action:any
-    ):any {
+    state = blogReducerDefaultState, 
+    action : BlogActionTypes
+    ):IBlogItem[] {
     switch (action.type) {
         case BLOG_ACTIONS.DELETE_BLOG:
             let mystate = [...state];

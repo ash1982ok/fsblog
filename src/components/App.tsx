@@ -1,30 +1,19 @@
 import './App.scss';
 
 /** All the global import */
-import React, { Component } from 'react';
+import React from 'react';
 
 /** All the local import */
-import { Blogs } from '../data/blogs-data';
 import AppRouter from '../router';
+import { store } from '../../src/store/congifureStore';
+import { Provider } from 'react-redux';
 
-/** Interface for the component props */
-interface IBlogsProps {
-  blogs: IBlogItem[]
-}
+const App: React.FC = () => {
+  return (
+    <Provider store={store}>
+      <AppRouter />
+    </Provider>
+  );
+};
 
-/**
- *  App component to hold all the components
- * @param props IBlogsProps
- */
-export default class App extends Component<IBlogsProps> {
-
-  render() {
-    return (
-      <div>
-        <AppRouter {...this.props} />
-      </div>
-    )
-  }
-
-  static defaultProps = Blogs;
-}
+export default App;

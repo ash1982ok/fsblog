@@ -9,6 +9,8 @@ export const rootReducer = combineReducers({
     blogs: blogReducer
 });
 
+export type AppState = ReturnType<typeof rootReducer>;
+
 /** creating store from reducers */
 export const store = createStore(
     rootReducer

@@ -14,7 +14,7 @@ export const history = createHistory();
 
 /** Interface for the component props */
 interface IBlogsRouteProps {
-  blogs: IBlogItem[]
+  blogs?: IBlogItem[]
 }
 
 /** Application router for the app 
