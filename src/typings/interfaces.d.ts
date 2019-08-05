@@ -1,6 +1,8 @@
 // **********************************
 // Common application interface
 // **********************************
+declare module 'redux-form';
+declare module 'uuid';
 
 interface IBlogItem {
     id: string,

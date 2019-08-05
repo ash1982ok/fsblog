@@ -10,11 +10,16 @@ export interface IDeleteBlogAction {
     payload: number
 }
 
+export interface IAddBlogAction {
+    type : typeof BLOG_ACTIONS.ADD_BLOG,
+    payload: IBlogItem
+}
+
 /** Single type to represent all blog related action types 
  * If more actions needed then they will be added as OR conditions as below
  *  export type BlogActionTypes = deleteBlogAction | editBlogAction | addBlogAction;
 */
-export type BlogActionTypes = IDeleteBlogAction;
+export type BlogActionTypes = IDeleteBlogAction | IAddBlogAction;
 
 /** Single type to represent all application action types 
  * If more actions needed then they will be added as OR conditions as below

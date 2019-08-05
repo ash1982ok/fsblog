@@ -1,1 +1,1 @@
-export enum BLOG_ACTIONS {  DELETE_BLOG }
+export enum BLOG_ACTIONS { DELETE_BLOG=0 , ADD_BLOG=1 }

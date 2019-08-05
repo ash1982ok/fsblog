@@ -1,0 +1,8 @@
+li.nav-item {
+    &:hover {
+        background: green;
+        a {
+            color: white !important;
+        }
+    }
+}

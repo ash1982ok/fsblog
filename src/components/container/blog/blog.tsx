@@ -31,11 +31,11 @@ const BlogItem: React.FC<IBlogListProps> = (props: IBlogListProps) => {
                 <Link to="/">Go back</Link><h1>{blog[0].title}
                 <br/>
                 </h1>
-                <p>{ReactHtmlParser (blog[0].content)}</p>
+                <section>{ReactHtmlParser (blog[0].content)}</section>
                 <summary>
                     <strong>Date Posted: </strong>{new Date(blog[0].datePosted).getDate() +'/'+ new Date(blog[0].datePosted).getMonth() + '/'+ new Date(blog[0].datePosted).getFullYear() } <br/>
                     <strong>Tags: </strong>{blog[0].tags} <br/>
-                    <strong>Tags: </strong>{blog[0].category} <br/>
+                    <strong>Category: </strong>{blog[0].category} <br/>
                 </summary>
                 <br/>
                 <Link to="/">Go back</Link>

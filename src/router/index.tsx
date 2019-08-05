@@ -8,6 +8,7 @@ import BlogItem from '../components/container/blog/blog';
 import BlogList from '../components/container/blog-list/blog-list';
 import FsHeader from '../components/presentation/header/header';
 import UrlError from '../components/container/url-error/url-error';
+import BlogForm from '../components/container/blog-form/blog-form';
 
 /** history object */
 export const history = createHistory();
@@ -29,6 +30,7 @@ const AppRouter = (props: IBlogsRouteProps) => (
       <FsHeader />
       <Switch>
         <Route exact path="/" component={BlogList} />
+        <Route exact path="/blog/new" component={BlogForm} />
         <Route exact path="/blog/:id" component={BlogItem} />
         <Route component={UrlError} />
       </Switch>
