@@ -1,3 +1,5 @@
+[![Travis Build Status](https://travis-ci.org/ash1982ok/fsblog.svg?branch=master)](https://travis-ci.org/ash1982ok/fsblog)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Steps to run the application
