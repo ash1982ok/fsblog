@@ -3,8 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@types/enzyme-adapter-react-16": "^1.0.5",
-    "@types/jest": "24.0.15",
     "@types/node": "12.6.8",
     "@types/react": "16.8.23",
     "@types/react-dom": "16.8.5",
@@ -45,11 +43,6 @@
     ]
   },
   "devDependencies": {
-    "@types/enzyme": "^3.10.3",
-    "@types/uuid": "^3.4.5",
-    "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.14.0",
-    "jest": "^24.8.0",
-    "jest-enzyme": "^7.0.2"
+    "@types/uuid": "^3.4.5"
   }
 }
